@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import google-generativeai as genai
+import google.generativeai as genai
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -30,7 +30,7 @@ question_vectors = vectorizer.fit_transform(df['Question'])
 
 # Configure Gemini API (replace with your actual API key)
 API_KEY = "AIzaSyB121TcLtRHJjHECYdHzG8Ze_8KzpC3BKQ"
-"  # DO NOT EMBED KEYS DIRECTLY! Use st.secrets or env vars!
+ # DO NOT EMBED KEYS DIRECTLY! Use st.secrets or env vars!
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-1.5-flash')
 
